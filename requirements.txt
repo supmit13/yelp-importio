@@ -1,0 +1,131 @@
+I need a python developer to help me by creating a script that does the following:
+
+1. Submit a list of URLs (CSV or TXT file is fine) to the Import.io Extractor API.
+2. Store the results returned and any failures to be run through again until we see 100% success on returned data.
+3. Using the results you get back from the first run, the script should submit those news links to another Extractor through the API and essentially repeat steps 1-2.
+4. Once all the results are finished, the script should save the 2 sets of data together by matching up the URLs from the first extraction and the second.
+
+There are data samples attached.
+
+Interested in this position? Please take the following steps when you apply.
+
+1. Download the dataset files and get an understanding of the steps I wrote about above.
+2. Review the Import.io client libraries: https://github.com/import-io/importio-client-libs/blob/master/python/importio.py
+3. Run a crawl with Import.io using these 2 data sources:
+a. Yelp Search Crawler - http://import.io/data/mine/?id=3bcdeb1c-17cd-4d59-8114-6504548bff31
+b. Yelp Profile Crawler - http://import.io/data/mine/?id=e7391a0d-e1d8-499d-a400-8c88852b904a
+4. Share previous code samples on your Github account for our review.
+5. Ask any questions you have about how the script should work.
+
+There is more work to come if this project goes well.
+
+API Key: I0Cw8PdgcsJvfy1NIeqVQ7idQEjdxxM8KDvyU48kc9p3HJ1G4ZsMtrCBUGgHuUR2VoAp6P/w8rl2uhvcsL0b/g==
+
+39df3fe4-c716-478b-9b80-bdbee43bfbde
+
+https://api.import.io/store/connector/d50aff7b-ad19-4f64-ab1a-1e8f9a1bb249/_query?input/webpage/url=http%3A%2F%2Fcdn.import.io%2Ftest%2Fpages%2Fbasic%2Findex.html&_user=7dca778d-123c-40e8-91a2-0536b5a4531e&_apikey=I0Cw8PdgcsJvfy1NIeqVQ7idQEjdxxM8KDvyU48kc9p3HJ1G4ZsMtrCBUGgHuUR2VoAp6P%2Fw8rl2uhvcsL0b%2Fg%3D%3D
+
+https://api.import.io/store/connector/d50aff7b-ad19-4f64-ab1a-1e8f9a1bb249/_query?format=HTML&input/webpage/url=https%3A%2F%2Fwww.elance.com%2Fr%2Fjobs%2Fcat-it-programming%2Fsct-software-application-10216%2F&_user=7dca778d-123c-40e8-91a2-0536b5a4531e&_apikey=I0Cw8PdgcsJvfy1NIeqVQ7idQEjdxxM8KDvyU48kc9p3HJ1G4ZsMtrCBUGgHuUR2VoAp6P%2Fw8rl2uhvcsL0b%2Fg%3D%3D
+
+
+_user=7dca778d-123c-40e8-91a2-0536b5a4531e
+http://www.yelp.com/search?find_desc=hotels&find_loc=La+Jolla%2CCA
+
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet"></head><body><table class="table table-striped table-bordered table-hover table-condensed"><thead><th>_pageUrl</th><th>_position</th><th>name</th><th>position</th><th>bio</th><th>picture</th><th>picture/_source</th><th>picture/_title</th><th>picture/_alt</th></thead><tbody></tbody></table></body></html>
+
+
+importio.ImportIO(userId="7dca778d-123c-40e8-91a2-0536b5a4531e", apiKey="I0Cw8PdgcsJvfy1NIeqVQ7idQEjdxxM8KDvyU48kc9p3HJ1G4ZsMtrCBUGgHuUR2VoAp6P/w8rl2uhvcsL0b/g==")
+
+client.query({"input":{"webpage/url":"http://import.io/data/mine/?id=3bcdeb1c-17cd-4d59-8114-6504548bff31"},"connectorGuids":["3bcdeb1c-17cd-4d59-8114-6504548bff31"]}, callback )
+
+
+http://www.yelp.com/user_details?userid=rRwKhZFaww1vFU2vmocH8A
+
+https://api.import.io/store/connector/d50aff7b-ad19-4f64-ab1a-1e8f9a1bb249/_query?format=HTML&input/webpage/url=http%3A%2F%2Fwww.yelp.com%2Fuser_details?userid=rRwKhZFaww1vFU2vmocH8A&_user=7dca778d-123c-40e8-91a2-0536b5a4531e&_apikey=I0Cw8PdgcsJvfy1NIeqVQ7idQEjdxxM8KDvyU48kc9p3HJ1G4ZsMtrCBUGgHuUR2VoAp6P%2Fw8rl2uhvcsL0b%2Fg%3D%3D
+
+
+
+client = importio.ImportIO(userId="7dca778d-123c-40e8-91a2-0536b5a4531e", apiKey="YOUR_API_KEY")
+
+
+https://api.import.io/store/connector/d50aff7b-ad19-4f64-ab1a-1e8f9a1bb249/_query?format=HTML&input/webpage/url=http%3A%2F%2Fwww.yelp.com%2Fuser_details?userid=rRwKhZFaww1vFU2vmocH8A&_user=7dca778d-123c-40e8-91a2-0536b5a4531e&_apikey=I0Cw8PdgcsJvfy1NIeqVQ7idQEjdxxM8KDvyU48kc9p3HJ1G4ZsMtrCBUGgHuUR2VoAp6P%2Fw8rl2uhvcsL0b%2Fg%3D%3D
+
+
+
+{"input":{"webpage/url":"http://www.yelp.com/search?find_desc=hotels&find_loc=San+Francisco%2C+CA"},"connectorGuids":["3bcdeb1c-17cd-4d59-8114-6504548bff31"]}, callback 
+
+http%3A%2F%2Fwww.yelp.com%2Fsearch?find_desc=hotels&find_loc=San+Francisco%2C+CA
+
+
+https://api.import.io/store/connector/d50aff7b-ad19-4f64-ab1a-1e8f9a1bb249/_query?format=HTML&input/webpage/url=http%3A%2F%2Fwww.yelp.com%2Fsearch?find_desc=hotels&find_loc=San_Francisco%2C_CA&_user=7dca778d-123c-40e8-91a2-0536b5a4531e&_digest=I0Cw8PdgcsJvfy1NIeqVQ7idQEjdxxM8KDvyU48kc9p3HJ1G4ZsMtrCBUGgHuUR2VoAp6P%2Fw8rl2uhvcsL0b%2Fg%3D%3D
+
+https://api.import.io/store/connector/d50aff7b-ad19-4f64-ab1a-1e8f9a1bb249/_query?format=HTML&input/webpage/url=http%3A%2F%2Fwww.yelp.com%2Fsearch?find_desc=hotels&find_loc=San+Francisco%2C+CA&_user=7dca778d-123c-40e8-91a2-0536b5a4531e&_apikey=I0Cw8PdgcsJvfy1NIeqVQ7idQEjdxxM8KDvyU48kc9p3HJ1G4ZsMtrCBUGgHuUR2VoAp6P%2Fw8rl2uhvcsL0b%2Fg%3D%3D
+
+
+https://www.google.com/url?q=http://www.yelp.com/search%3Ffind_desc%3Dgltuen%2Bfree%2Bpizza%26find_loc%3DSan%2BFrancisco%252C%2BCa&usd=2&usg=ALhdy29quDdNbv8X5FyJxCTH71lL75mv4w
+
+
+
+client = importio.ImportIO(host="https://query.import.io", userId="7dca778d-123c-40e8-91a2-0536b5a4531e", apiKey="I0Cw8PdgcsJvfy1NIeqVQ7idQEjdxxM8KDvyU48kc9p3HJ1G4ZsMtrCBUGgHuUR2VoAp6P/w8rl2uhvcsL0b/g==")
+client.connect()
+client.query({"input":{"webpage/url":"http://www.yelp.com/search?find_desc=hotels&find_loc=San+Francisco%2C+CA"},"connectorGuids":["3bcdeb1c-17cd-4d59-8114-6504548bff31"]}, callback )
+
+http://www.yelp.com/biz/marines-memorial-club-and-hotel-san-francisco-4
+
+
+
+
+
+D:\work\odesk\ImportIOExtractorAPI>python bot.py
+http://www.yelp.com/biz/hotel-burnham-a-kimpton-hotel-chicago
+http://www.yelp.com/biz/acme-hotel-company-chicago
+http://www.yelp.com/biz/hampton-inn-majestic-chicago-theatre-district-hotel-chic
+ago
+http://www.yelp.com/biz/the-talbott-hotel-chicago
+http://www.yelp.com/biz/residence-inn-chicago-downtown-river-north-chicago
+http://www.yelp.com/biz/the-langham-chicago-chicago
+http://www.yelp.com/biz/radisson-blu-aqua-chicago
+http://www.yelp.com/biz/waldorf-astoria-chicago-chicago-2
+http://www.yelp.com/biz/sofitel-chicago-water-tower-chicago
+http://www.yelp.com/biz/courtyard-chicago-downtown-magnificent-mile-chicago
+
+D:\work\odesk\ImportIOExtractorAPI>
+
+http://www.yelp.com/search?find_desc=hotels&find_loc=Denver%2C
+http://www.yelp.com/search?find_desc=hotels&find_loc=Tuscany%2CCA
+http://www.yelp.com/search?find_desc=hotels&find_loc=Greenwich%2C
+http://www.yelp.com/search?find_desc=hotels&find_loc=Greenville%2CCA
+http://www.yelp.com/search?find_desc=hotels&find_loc=Madison%2CCA
+http://www.yelp.com/search?find_desc=hotels&find_loc=La+Jolla%2CCA
+http://www.yelp.com/search?find_desc=hotels&find_loc=Wisconsin%2C
+http://www.yelp.com/search?find_desc=hotels&find_loc=Tampa+Bay%2C
+http://www.yelp.com/search?find_desc=hotels&find_loc=Chicago%2C
+http://www.yelp.com/search?find_desc=hotels&find_loc=Austin%2C
+http://www.yelp.com/search?find_desc=hotels&find_loc=Seattle%2C
+
+http://www.yelp.com/search?find_desc=banks&find_loc=La+Jolla%2CCA
+http://www.yelp.com/search?find_desc=banks&find_loc=tampa+Bay%2C
+
+
+01206572387_dsl@airtelbroadband.in
+
+
+https://code.google.com/p/auto-weebly/
+https://code.google.com/p/email-bots/
+https://code.google.com/p/email-harvester/
+https://code.google.com/p/jobs-bots/
+https://github.com/supmit/ScrapeToMysql
+https://github.com/supmit/ShamrockBailBonds
+https://github.com/supmit/WordpressFacebook
+
+
+Demo meeting at 10:30 pm - 19th February 2014, Wednesday.
+
+
+
+http://www.yelp.com/search?find_desc=banks&find_loc=austin%2C&start=750
+http://www.yelp.com/search?find_desc=banks&find_loc=greenville%2C&start=20
+
+
+3a719346-cf0c-4aa2-a227-e7dcb0991339

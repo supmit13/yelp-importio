@@ -1,0 +1,3 @@
+http://www.yelp.com/search?find_desc=restaurants&find_loc=La+Jolla%2CCA
+http://www.yelp.com/search?find_desc=doctors&find_loc=La+Jolla%2CCA
+http://www.yelp.com/search?find_desc=schools&find_loc=La+Jolla%2CCA

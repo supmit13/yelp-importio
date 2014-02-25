@@ -1,0 +1,15 @@
+
+D:\work\odesk\ImportIOExtractorAPI>python bot.py
+http://www.yelp.com/biz/hotel-burnham-a-kimpton-hotel-chicago
+http://www.yelp.com/biz/acme-hotel-company-chicago
+http://www.yelp.com/biz/hampton-inn-majestic-chicago-theatre-district-hotel-chic
+ago
+http://www.yelp.com/biz/the-talbott-hotel-chicago
+http://www.yelp.com/biz/residence-inn-chicago-downtown-river-north-chicago
+http://www.yelp.com/biz/the-langham-chicago-chicago
+http://www.yelp.com/biz/radisson-blu-aqua-chicago
+http://www.yelp.com/biz/waldorf-astoria-chicago-chicago-2
+http://www.yelp.com/biz/sofitel-chicago-water-tower-chicago
+http://www.yelp.com/biz/courtyard-chicago-downtown-magnificent-mile-chicago
+
+D:\work\odesk\ImportIOExtractorAPI>
